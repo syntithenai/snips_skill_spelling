@@ -1,12 +1,14 @@
-Maths skill for Snips
+Spelling skill for Snips
 ======================================
 
 |MIT License|
 
-snips-skill-maths
+snips-skill-spelling will spell the requested word
 
 Installation
 ------------
+
+The fastest way to get going is to use the prebuilt assistant and Snipsfile at  https://github.com/syntithenai/snips_skill_maths
 
 Usage
 -----
@@ -15,8 +17,16 @@ Snips Skills Manager
 
 It is recommended that you use this skill with the `Snips Skills Manager <https://github.com/snipsco/snipsskills>`_. Simply add the following section to your `Snipsfile <https://github.com/snipsco/snipsskills/wiki/The-Snipsfile>`_:
 
-Standalone usage
-^^^^^^^^^^^^^^^^
+pip: snips-skill-spelling
+package_name: spellingskill
+class_name: SpellingSkill
+requires_tts: True
+intents:
+  - intent: SpellWord
+    action: |
+      {%
+      skill.spell_and_say(intent.wordToSpell)
+      %}
 
 Contributing
 ------------

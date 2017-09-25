@@ -13,6 +13,6 @@ class SpellingSkill:
         return " ".join(list(wordToSpell))
 
     def spell_and_say(self,wordToSpell):
-        result = self.spell(self,wordToSpell)
+        result = self.spell(wordToSpell)
         if self.tts_service:
-                self.tts_service.speak(_("{} is spelled {}").format(wordToSpell,result))
+                self.tts_service.speak("{} is spelled {}".format(wordToSpell,result))
